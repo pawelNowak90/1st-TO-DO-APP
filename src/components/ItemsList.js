@@ -1,23 +1,22 @@
 import React, { Component } from "react";
+import Task from './Task';
 
 class ItemsList extends Component {
   state = {};
+
   render() {
+  
+    // const tasks=this.props.tasks.map(task => (
+    // <Task key={task.id} task={task} change={this.props.change} delete={this.props.delete}/>)
+    // )
+  
     return (
       <>
-        {this.props.tasks.map((task) => (
-          <div key={task.id}>
-            <strong>
-              {task.id}.{task.content}
-            </strong>
-            do kiedy należy wykonać:
-            <em />
-            {task.date}
-            <button onClick={this.props.clickDone}>Zadanie wykonane</button>
-            <button onClick={this.props.clickDelete}>X</button>
-          </div>
-        ))}
-        <hr />
+        <div className="active">
+          <h1>Zadania do zrobienia</h1>
+          {tasks}
+        </div>
+
       </>
     );
   }
