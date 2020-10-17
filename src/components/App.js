@@ -12,7 +12,7 @@ class App extends React.Component {
         date: "31-10-2020",
         finnishDate:null,
         important: false,
-        active: false,
+        active: true,
         isDelete: false,
       },
       {
@@ -21,7 +21,7 @@ class App extends React.Component {
         date: "16-10-2020",
         finnishDate:null,
         important: false,
-        active: false,
+        active: true,
         isDelete: false,
       },
       {
@@ -91,28 +91,23 @@ class App extends React.Component {
   };
 
   handleDoneClick = (id) => {
-    console.log('done elementu o id ' + id);
     let tasks = Array.from(this.state.tasks);
     tasks.forEach(task=>{
       if (task.id === id){
-        task.active=true;
+        task.active=false;
         task.finishDate = new Date().getTime();
       }
     })
+    this.setState({tasks})  
 
   };
 
   handleDeleteClick = (id) => {
-    console.log('delete elementu o id ' + id);
-    
     const tasks = [...this.state.tasks];
     const index = tasks.findIndex(task => task.id ===id);
     tasks.splice(index,1);
 
-
-    this.setState({
-      tasks,
-    })  
+    this.setState({tasks})  
   };
 
   render() {

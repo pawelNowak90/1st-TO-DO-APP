@@ -6,8 +6,10 @@ const Task = (props) => {
         <div>
             <p>
            <strong> {content}</strong> - do <span> {date}</span>    
-            <button onClick={()=>props.change(id)}>Zostało zrobione</button>
-            <button onClick={()=>props.delete(id)}>X</button>
+            {/* {console.log(props.task.active)} */}
+            
+            {props.task.active && <button onClick={()=>props.change(id)}>Zostało zrobione</button>}
+             <button onClick={()=>props.delete(id)}>X</button>
             </p>
         </div>
      );
