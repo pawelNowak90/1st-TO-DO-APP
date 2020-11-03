@@ -9,7 +9,7 @@ const TasksCompleted = (props) => {
   return (
   <>
   <p>TASKS COMPLETED Component</p>
-  {activeTasks}  
+  {activeTasks}
 </>
   )
 

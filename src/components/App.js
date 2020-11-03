@@ -1,6 +1,6 @@
 import React from "react";
 import ItemsList from "./ItemsList";
-import AddTask from "./AddTask";
+import AddTask from '../AddTask';
 // import TasksCompleted from "./TasksCompleted";
 
 class App extends React.Component {
@@ -110,12 +110,17 @@ class App extends React.Component {
     this.setState({tasks})  
   };
 
+addTask=()=>{
+  console.log('metoda addTask DODAŁA OBIEKT');
+  
+}
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1>TO DO APP</h1>
-          <AddTask />
+          <AddTask add={this.addTask}/>
           <ItemsList
             tasks={this.state.tasks}
             // clickDone={() => this.handleDoneClick(task.id)}
